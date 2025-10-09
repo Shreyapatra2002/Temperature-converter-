@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-card">
+            <div class="card-header">
+                <h1 id="temperature">🌡️ Temperature Converter</h1>
+                <div class="theme-toggle">
+                    <button id="themeBtn">🌙 Dark Mode</button>
+                </div>
+            </div>
+            
+            <form class="converter-form">
+                <div class="input-group">
+                    <input type="number" id="textBox" value="0" placeholder="Enter temperature">
+                    <div class="unit-display">
+                        <span id="inputUnit">°C</span>
+                    </div>
+                </div>
+                
+                <div class="conversion-direction">
+                    <div class="direction-options">
+                        <input type="radio" id="toFahrenheit" name="unit" checked>
+                        <label for="toFahrenheit" class="direction-btn">
+                            <span>°C → °F</span>
+                            <small>Celsius to Fahrenheit</small>
+                        </label>
+                        
+                        <input type="radio" id="toCelsius" name="unit">
+                        <label for="toCelsius" class="direction-btn">
+                            <span>°F → °C</span>
+                            <small>Fahrenheit to Celsius</small>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quick-temps">
+                    <h3>Quick References:</h3>
+                    <div class="temp-buttons">
+                        <button type="button" class="quick-btn" data-temp="-40">-40°</button>
+                        <button type="button" class="quick-btn" data-temp="0">0°</button>
+                        <button type="button" class="quick-btn" data-temp="20">20°</button>
+                        <button type="button" class="quick-btn" data-temp="37">37°</button>
+                        <button type="button" class="quick-btn" data-temp="100">100°</button>
+                    </div>
+                </div>
+                
+                <button type="button" id="convertBtn" class="convert-button">
+                    <span class="btn-text">Convert Temperature</span>
+                    <span class="btn-icon">↻</span>
+                </button>
+                
+                <div class="result-container">
+                    <div class="result-card">
+                        <h3>Conversion Result:</h3>
+                        <p id="result">32.0°F</p>
+                        <div class="temperature-scale">
+                            <div class="scale-bar">
+                                <div class="scale-fill" id="scaleFill"></div>
+                            </div>
+                            <div class="scale-labels">
+                                <span>Cold</span>
+                                <span>Moderate</span>
+                                <span>Hot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="history-section">
+                <h3>Conversion History</h3>
+                <div id="historyList" class="history-list">
+                    <div class="history-empty"><em>No conversion history yet</em></div>
+                </div>
+                <button type="button" id="clearHistory" class="clear-btn" disabled>Clear History</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
